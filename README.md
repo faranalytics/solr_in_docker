@@ -16,7 +16,6 @@ Reference: [Install Docker Engine on Fedora](https://docs.docker.com/engine/inst
 Reference: [Solr in Docker](https://solr.apache.org/guide/solr/latest/deployment-guide/solr-in-docker.html)
 
 ```yml
-version: "3"
 services:
   solr:
     image: solr:8.11.4
@@ -27,6 +26,10 @@ services:
     command:
       - solr-precreate
       - gettingstarted
+    deploy:
+      resources:
+        limits:
+          memory: 16G
 volumes:
   data:
 ```
